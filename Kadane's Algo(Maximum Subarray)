@@ -1,0 +1,15 @@
+# Array-Important-
+class Solution:
+    def maxSubArray(self, nums: List[int]) -> int:
+        n=len(nums)
+        if n==1:
+            return nums[0]      #if array has one element so it will be Maximum of Subarray
+        m=float('-inf')
+        temp_sum=0
+        for num in nums:     
+            temp_sum+=num
+            m=max(m,temp_sum)         #   compare current_sum and max and store as m 
+            if temp_sum<0:           # if temp_sum is negative then set temp_sum=0
+                temp_sum=0
+        return m
+        
