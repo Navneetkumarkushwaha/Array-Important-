@@ -1,1 +1,19 @@
 
+# Array
+class Solution:
+    def sumOddLengthSubarrays(self, arr: List[int]) -> int:
+        
+        total=0                                   #  in total we will store sum of odd sumarray
+        
+        for odd_index in range(1,len(arr)+1,2):   # odd array
+            
+            start=0                               #  starting of odd_index subarray
+            end=odd_index                         #  ending of odd_index subarray
+            
+            while end<=len(arr):                  #end must be less or equal to length of array
+                
+                total+=sum(arr[start:end])        #sum of odd length subarray
+                start+=1                         
+                end+=1
+        
+        return total                 
