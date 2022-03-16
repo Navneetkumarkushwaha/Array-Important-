@@ -1,0 +1,15 @@
+this question is base of house robber problem on leetcode.
+class Solution:
+	
+	def findMaxSum(self,nums, n):
+		prev=0
+		prev2=nums[0]
+		
+		for i in range(1,n):
+		    res=max(prev2,nums[i]+prev)
+		    prev=prev2
+		    prev2=res
+		return prev2
+    
+Time Complexity:-O(n)
+space Complexity:- O(1)
